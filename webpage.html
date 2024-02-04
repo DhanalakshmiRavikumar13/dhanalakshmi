@@ -1,5 +1,103 @@
 <html>
-  <title>
+  <head>
+    <title>Webpage</title>
+    <link rel="icon" href="https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?cs=srgb&dl=pexels-format-1029757.jpg&fm=jpg">
+
+  </head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+  <body>
+    <h1 id="head">Welcome to me page</h1>
+    <br>
+    <dl>
+      <dt>About</dt>
+      <dd>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam omnis exercitationem temporibus dolores, quasi distinctio eos unde autem deserunt dolorum ex iusto voluptatem aliquid explicabo? Sunt dolorem quam odio iusto!
+      </dd>
+    </dl>
+    <br>
+    <label for="question">you have any queries ?</label>
+    <br>
+    <input type="radio" name="question" id="question">Yes
+    <input type="radio" name="question" id="question">No
+    <br>
+    <p id="detail">
+      Enter you details
+    </p>
+    <form name="userdetails" onsubmit="return validation()">
+      <label for="name">Name</label>
+      <input tpe="text" name="name">
+      <br>
+      <label for="password">Password</label>
+      <input type="password"  name="password">
+      <br>
+      <label for="contact">Contact</label>
+      <input type="text" name="contact">
+      <br>
+      <label for="email">Email
+      </label>
+      <input type="text"  name="email">
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+    <style>
+      #head
+      {
+        text-align: center;
+      }
+    </style>
+    <script>
+      
+     
+      
+      function validation()
+      {
+        try
+        {
+          let name = document.forms["userdetails"]["name"].value;
+      let password = document.forms["userdetails"]["password"].value;
+      let contact = document.forms["userdetails"]["contact"].value;
+      let email = document.forms["userdetails"]["email"].value;
+          if( name==="")
+         {throw new error("name field contain must alphabets")}
+        else if (!/^[a-z A-z]+$/.test(name))
+        {throw new eror("must contain alphabets");}
+      if(!/(?=.*d)(?=.*[a-z][A-Z])(?=.*\W).{8,}/.test(password))
     
-  </title>
+      {throw new error ("contain 8 charcater minium");}
+      if(contact==="")
+      {
+        throw new error("name field contain must alphabets")
+      }
+      else if(!/^\d{10}$/.test(contact))
+      {
+        throw new error("hkkkkk");
+      }
+      if(email==="")
+      {
+        throw new error("name field contain must alphabets")
+      }
+      else if(!/\S+@\S+\.\S/.text(email))
+     { throw new error("error"); }
+      return true;
+        }
+        catch(error)
+        {
+        alert(error.message);
+      return false;}
+      
+        finally{
+          alert ("Thankyou!!");
+        }
+      }
+    
+    </script>
+    <script type="text/javascript">
+        function hello()
+      {
+        window.location="https://sece.ac.in";
+      }
+
+    </script>
+    <input type="button" value="hello" onclick="hello()">su</button>
+  </body>
 </html>
